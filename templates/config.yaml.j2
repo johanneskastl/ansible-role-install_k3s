@@ -40,3 +40,6 @@ write-kubeconfig-mode: "{{ write_kubeconfig_mode }}"
 {% if node_name is defined %}
 node-name: "{{ node_name }}"
 {% endif %}
+{% if with_node_id is defined %}
+with-node-id: "true"
+{% endif %}

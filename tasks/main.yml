@@ -10,25 +10,8 @@
 - name: 'Run service.yml'
   include_tasks: 'service.yml'
 
-#
-# Scripts
-#
-
-- name: 'Create the uninstall script'
-  template:
-    src: 'k3s-uninstall.sh.j2'
-    dest: '{{ path_to_install_to }}/k3s-uninstall.sh'
-    owner: 'root'
-    group: 'root'
-    mode: '0755'
-
-- name: 'Create the killall script'
-  template:
-    src: 'k3s-killall.sh.j2'
-    dest: '{{ path_to_install_to }}/k3s-killall.sh'
-    owner: 'root'
-    group: 'root'
-    mode: '0755'
+- name: 'Run scripts.yml'
+  include_tasks: 'scripts.yml'
 
 #
 # kubeconfig

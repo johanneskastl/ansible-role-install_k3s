@@ -4,3 +4,6 @@
 # directories
 path_to_install_to: '/usr/local/bin'
 systemd_directory_path: '/etc/systemd/system'
+
+# kubernetes version
+kubernetes_version: 'v1.20.6+k3s1'

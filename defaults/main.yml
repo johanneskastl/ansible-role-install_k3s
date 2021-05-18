@@ -11,5 +11,6 @@ ignore_errors_when_binary_downloaded: 'false'
 path_to_install_to: '/usr/local/bin'
 systemd_directory_path: '/etc/systemd/system'
 
-# kubernetes version
-kubernetes_version: 'v1.20.6+k3s1'
+# k3s releases
+k3s_installation_url: 'https://update.k3s.io/v1-release/channels'
+k3s_installation_channel: 'stable'

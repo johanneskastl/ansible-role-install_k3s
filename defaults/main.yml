@@ -1,6 +1,9 @@
 ---
 # install_k3s/defaults/main.yml
 
+# ignore errors
+ignore_errors_when_binary_downloaded: 'false'
+
 # directories
 path_to_install_to: '/usr/local/bin'
 systemd_directory_path: '/etc/systemd/system'

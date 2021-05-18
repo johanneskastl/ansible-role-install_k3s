@@ -58,3 +58,6 @@ container-runtime-endpoint: "{{ container_runtime_endpoint }}"
 {% if pause_image is defined %}
 pause-image: "{{ pause_image }}"
 {% endif %}
+{% if private_registry is defined %}
+private-registry: "{{ private_registry }}"
+{% endif %}

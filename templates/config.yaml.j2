@@ -10,3 +10,6 @@ tls-san:
 {% if https_listen_port is defined %}
 https-listen-port: {{ https_listen_port }}
 {% endif %}
+{% if advertise_address is defined %}
+advertise-address: {{ advertise_address }}
+{% endif %}

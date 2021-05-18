@@ -1,0 +1,6 @@
+---
+# install_k3s/handlers/main.yml
+
+- name: 'Trigger systemctl daemon-reload'
+  ansible.builtin.systemd:
+    daemon_reload: 'yes'

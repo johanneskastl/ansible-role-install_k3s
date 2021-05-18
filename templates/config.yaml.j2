@@ -91,3 +91,6 @@ cluster-dns: "{{ cluster_dns }}"
 {% if cluster_domain is defined %}
 cluster-domain: "{{ cluster_domain }}"
 {% endif %}
+{% if flannel_backend is defined %}
+flannel-backend: "{{ flannel_backend }}"
+{% endif %}

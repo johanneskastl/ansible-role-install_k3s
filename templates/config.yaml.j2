@@ -70,3 +70,6 @@ node-ip: "{{ node_ip }}"
 {% if node_external_ip is defined %}
 node-external-ip: "{{ node_external_ip }}"
 {% endif %}
+{% if resolv_conf is defined %}
+resolv-conf: "{{ resolv_conf }}"
+{% endif %}

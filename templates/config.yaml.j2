@@ -7,6 +7,9 @@ tls-san:
   - {{ line }}
 {% endfor %}
 {% endif %}
+{% if bind_address is defined %}
+bind-address: {{ bind_address }}
+{% endif %}
 {% if https_listen_port is defined %}
 https-listen-port: {{ https_listen_port }}
 {% endif %}

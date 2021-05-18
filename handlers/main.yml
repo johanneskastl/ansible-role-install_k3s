@@ -4,3 +4,8 @@
 - name: 'Trigger systemctl daemon-reload'
   ansible.builtin.systemd:
     daemon_reload: 'yes'
+
+- name: 'Restart the k3s service'
+  service:
+    name: 'k3s.service'
+    state: 'restarted'

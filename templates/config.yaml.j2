@@ -1,3 +1,9 @@
 #
 # {{ ansible_managed }}
 #
+{% if tls_san is defined %}
+tls-san:
+{% for line in tls_san %}
+  - {{ line }}
+{% endfor %}
+{% endif %}

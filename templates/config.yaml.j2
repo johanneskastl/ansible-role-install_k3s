@@ -37,3 +37,6 @@ write-kubeconfig: "{{ write_kubeconfig }}"
 {% if write_kubeconfig_mode is defined %}
 write-kubeconfig-mode: "{{ write_kubeconfig_mode }}"
 {% endif %}
+{% if node_name is defined %}
+node-name: "{{ node_name }}"
+{% endif %}

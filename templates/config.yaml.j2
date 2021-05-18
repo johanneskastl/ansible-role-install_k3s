@@ -76,3 +76,6 @@ resolv-conf: "{{ resolv_conf }}"
 {% if flannel_iface is defined %}
 flannel-iface: "{{ flannel_iface }}"
 {% endif %}
+{% if flannel_conf is defined %}
+flannel-conf: "{{ flannel_conf }}"
+{% endif %}

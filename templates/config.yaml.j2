@@ -43,3 +43,9 @@ node-name: "{{ node_name }}"
 {% if with_node_id is defined %}
 with-node-id: "true"
 {% endif %}
+{% if node_taint is defined %}
+node-taint:
+{% for line in node_taint %}
+  - "{{ line }}"
+{% endfor %}
+{% endif %}

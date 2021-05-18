@@ -5,11 +5,29 @@
 # Download and install the binary
 #
 
+# This is the original command used by the install script:
+# curl -w '%{url_effective}' -L -s -S "{{ k3s_installation_url }}/{{ k3s_installation_channel }}" -o /dev/null | sed -e 's|.*/||'
+
+- name: 'Detect latest kubernetes version, unless specified by the user'
+  uri:
+    url: "{{ k3s_installation_url }}/{{ k3s_installation_channel }}"
+  delegate_to: 'localhost'
+  become: 'false'
+  changed_when: 'false'
+  register: get_k3s_version
+  when:
+    - 'k3s_version is undefined'
+
+- set_fact:
+    k3s_version: "{{ get_k3s_version.url | basename }}"
+  when:
+    - 'k3s_version is undefined'
+
 - name: 'Download k3s binary'
   get_url:
-    url: "https://github.com/k3s-io/k3s/releases/download/{{ kubernetes_version }}/k3s"
+    url: "https://github.com/k3s-io/k3s/releases/download/{{ k3s_version }}/k3s"
     dest: "{{ path_to_install_to }}/k3s"
-    checksum: "sha256:https://github.com/k3s-io/k3s/releases/download/{{ kubernetes_version }}/sha256sum-amd64.txt"
+    checksum: "sha256:https://github.com/k3s-io/k3s/releases/download/{{ k3s_version }}/sha256sum-amd64.txt"
     owner: 'root'
     group: 'root'
     mode: '0755'

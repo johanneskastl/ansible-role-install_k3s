@@ -67,3 +67,6 @@ private-registry: "{{ private_registry }}"
 {% if node_ip is defined %}
 node-ip: "{{ node_ip }}"
 {% endif %}
+{% if node_external_ip is defined %}
+node-external-ip: "{{ node_external_ip }}"
+{% endif %}

@@ -1,6 +1,9 @@
 ---
 # install_k3s/defaults/main.yml
 
+# default for type of node
+k3s_node_type: 'server'
+
 # ignore errors
 ignore_errors_when_binary_downloaded: 'false'
 

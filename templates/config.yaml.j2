@@ -4,36 +4,36 @@
 {% if tls_san is defined %}
 tls-san:
 {% for line in tls_san %}
-  - {{ line }}
+  - "{{ line }}"
 {% endfor %}
 {% endif %}
 {% if bind_address is defined %}
-bind-address: {{ bind_address }}
+bind-address: "{{ bind_address }}"
 {% endif %}
 {% if https_listen_port is defined %}
-https-listen-port: {{ https_listen_port }}
+https-listen-port: "{{ https_listen_port }}"
 {% endif %}
 {% if advertise_address is defined %}
-advertise-address: {{ advertise_address }}
+advertise-address: "{{ advertise_address }}"
 {% endif %}
 {% if advertise_port is defined %}
-advertise-port: {{ advertise_port }}
+advertise-port: "{{ advertise_port }}"
 {% endif %}
 {% if data_dir is defined %}
-data-dir: {{ data_dir }}
+data-dir: "{{ data_dir }}"
 {% endif %}
 {% if node_label is defined %}
 node-label:
 {% for line in node_label %}
-  - {{ line }}
+  - "{{ line }}"
 {% endfor %}
 {% endif %}
 {% if token is defined %}
-token: {{ token }}
+token: "{{ token }}"
 {% endif %}
 {% if write_kubeconfig is defined %}
-write-kubeconfig: {{ write_kubeconfig }}
+write-kubeconfig: "{{ write_kubeconfig }}"
 {% endif %}
 {% if write_kubeconfig_mode is defined %}
-write-kubeconfig-mode: {{ write_kubeconfig_mode }}
+write-kubeconfig-mode: "{{ write_kubeconfig_mode }}"
 {% endif %}

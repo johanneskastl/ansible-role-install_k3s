@@ -64,3 +64,6 @@ pause-image: "{{ pause_image }}"
 {% if private_registry is defined %}
 private-registry: "{{ private_registry }}"
 {% endif %}
+{% if node_ip is defined %}
+node-ip: "{{ node_ip }}"
+{% endif %}

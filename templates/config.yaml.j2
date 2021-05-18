@@ -31,6 +31,9 @@ node-label:
 {% if token is defined %}
 token: "{{ token }}"
 {% endif %}
+{% if token_file is defined %}
+token-file: "{{ token_file }}"
+{% endif %}
 {% if write_kubeconfig is defined %}
 write-kubeconfig: "{{ write_kubeconfig }}"
 {% endif %}

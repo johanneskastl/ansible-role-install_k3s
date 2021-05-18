@@ -88,3 +88,6 @@ service-cidr: "{{ service_cidr }}"
 {% if cluster_dns is defined %}
 cluster-dns: "{{ cluster_dns }}"
 {% endif %}
+{% if cluster_domain is defined %}
+cluster-domain: "{{ cluster_domain }}"
+{% endif %}

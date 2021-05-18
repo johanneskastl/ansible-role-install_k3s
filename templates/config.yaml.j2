@@ -19,3 +19,6 @@ advertise-address: {{ advertise_address }}
 {% if advertise_port is defined %}
 advertise-port: {{ advertise_port }}
 {% endif %}
+{% if data_dir is defined %}
+data-dir: {{ data_dir }}
+{% endif %}

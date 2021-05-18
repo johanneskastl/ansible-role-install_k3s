@@ -82,3 +82,6 @@ flannel-conf: "{{ flannel_conf }}"
 {% if cluster_cidr is defined %}
 cluster-cidr: "{{ cluster_cidr }}"
 {% endif %}
+{% if service_cidr is defined %}
+service-cidr: "{{ service_cidr }}"
+{% endif %}

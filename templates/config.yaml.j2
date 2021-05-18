@@ -52,6 +52,9 @@ node-taint:
 {% if docker is defined %}
 docker: "true"
 {% endif %}
+{% if container_runtime_endpoint is defined %}
+container-runtime-endpoint: "{{ container_runtime_endpoint }}"
+{% endif %}
 {% if pause_image is defined %}
 pause-image: "{{ pause_image }}"
 {% endif %}

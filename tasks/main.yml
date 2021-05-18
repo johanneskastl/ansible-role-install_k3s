@@ -1,0 +1,122 @@
+---
+# install_k3s/tasks/main.yml
+
+#
+# Download and install the binary
+#
+
+- name: 'Download k3s binary'
+  get_url:
+    url: "https://github.com/k3s-io/k3s/releases/download/{{ kubernetes_version }}/k3s"
+    dest: "{{ path_to_install_to }}/k3s"
+    checksum: "sha256:https://github.com/k3s-io/k3s/releases/download/{{ kubernetes_version }}/sha256sum-amd64.txt"
+    owner: 'root'
+    group: 'root'
+    mode: '0755'
+  register: download_binary
+  notify:
+    - 'Restart the k3s service'
+
+- name: 'Set fact to ignore errors in check mode, if binary would be downloaded'
+  set_fact:
+    ignore_errors_when_binary_downloaded: 'true'
+  when:
+    - 'download_binary.changed | bool'
+    - 'ansible_check_mode | bool'
+
+- name: 'Create necessary links to binary'
+  ansible.builtin.file:
+    # links are relative, not absolute, so only giving 'k3s' as source here is intended...
+    src: 'k3s'
+    dest: "{{ path_to_install_to }}/{{ item }}"
+    state: 'link'
+    owner: 'root'
+    group: 'root'
+  loop:
+    - 'ctr'
+    - 'crictl'
+    - 'kubectl'
+  ignore_errors: "{{ ignore_errors_when_binary_downloaded }}"
+
+#
+# Configuration files
+#
+
+- name: 'Create directories'
+  file:
+    path: "{{ item }}"
+    state: 'directory'
+    owner: 'root'
+    group: 'root'
+    mode: '0755'
+  loop:
+    - '/etc/rancher/'
+    - '/etc/rancher/k3s/'
+  notify:
+    - 'Restart the k3s service'
+
+- name: 'Create the configuration file'
+  template:
+    src: 'config.yaml.j2'
+    dest: '/etc/rancher/k3s/config.yaml'
+    owner: 'root'
+    group: 'root'
+    mode: '0640'
+  notify:
+    - 'Trigger systemctl daemon-reload'
+    - 'Restart the k3s service'
+
+- name: 'Create the env file'
+  template:
+    src: 'k3s.service.env.j2'
+    dest: "{{ systemd_directory_path }}/k3s.service.env"
+    owner: 'root'
+    group: 'root'
+    mode: '0640'
+  notify:
+    - 'Trigger systemctl daemon-reload'
+    - 'Restart the k3s service'
+
+- name: 'Create systemd service file'
+  template:
+    src: 'k3s.service.j2'
+    dest: "{{ systemd_directory_path }}/k3s.service"
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+  notify:
+    - 'Trigger systemctl daemon-reload'
+    - 'Restart the k3s service'
+
+#
+# Service
+#
+
+- name: 'Make sure systemd is aware of all newly created files'
+  meta: flush_handlers
+
+- name: 'Start and enable the service'
+  service:
+    name: 'k3s.service'
+    state: 'started'
+    enabled: 'true'
+
+#
+# Scripts
+#
+
+- name: 'Create the uninstall script'
+  template:
+    src: 'k3s-uninstall.sh.j2'
+    dest: '{{ path_to_install_to }}/k3s-uninstall.sh'
+    owner: 'root'
+    group: 'root'
+    mode: '0755'
+
+- name: 'Create the killall script'
+  template:
+    src: 'k3s-killall.sh.j2'
+    dest: '{{ path_to_install_to }}/k3s-killall.sh'
+    owner: 'root'
+    group: 'root'
+    mode: '0755'

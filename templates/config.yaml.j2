@@ -73,3 +73,6 @@ node-external-ip: "{{ node_external_ip }}"
 {% if resolv_conf is defined %}
 resolv-conf: "{{ resolv_conf }}"
 {% endif %}
+{% if flannel_iface is defined %}
+flannel-iface: "{{ flannel_iface }}"
+{% endif %}

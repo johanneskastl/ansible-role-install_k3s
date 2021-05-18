@@ -22,3 +22,6 @@ advertise-port: {{ advertise_port }}
 {% if data_dir is defined %}
 data-dir: {{ data_dir }}
 {% endif %}
+{% if token is defined %}
+token: {{ token }}
+{% endif %}

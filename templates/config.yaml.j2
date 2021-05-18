@@ -49,3 +49,6 @@ node-taint:
   - "{{ line }}"
 {% endfor %}
 {% endif %}
+{% if docker is defined %}
+docker: "true"
+{% endif %}

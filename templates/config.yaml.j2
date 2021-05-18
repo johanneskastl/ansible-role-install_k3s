@@ -13,3 +13,6 @@ https-listen-port: {{ https_listen_port }}
 {% if advertise_address is defined %}
 advertise-address: {{ advertise_address }}
 {% endif %}
+{% if advertise_port is defined %}
+advertise-port: {{ advertise_port }}
+{% endif %}

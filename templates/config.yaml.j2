@@ -25,3 +25,6 @@ data-dir: {{ data_dir }}
 {% if token is defined %}
 token: {{ token }}
 {% endif %}
+{% if write_kubeconfig is defined %}
+write-kubeconfig: {{ write_kubeconfig }}
+{% endif %}

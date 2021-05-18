@@ -7,40 +7,8 @@
 - name: 'Run configuration.yml'
   include_tasks: 'configuration.yml'
 
-- name: 'Create the env file'
-  template:
-    src: 'k3s.service.env.j2'
-    dest: "{{ systemd_directory_path }}/k3s.service.env"
-    owner: 'root'
-    group: 'root'
-    mode: '0640'
-  notify:
-    - 'Trigger systemctl daemon-reload'
-    - 'Restart the k3s service'
-
-- name: 'Create systemd service file'
-  template:
-    src: 'k3s.service.j2'
-    dest: "{{ systemd_directory_path }}/k3s.service"
-    owner: 'root'
-    group: 'root'
-    mode: '0644'
-  notify:
-    - 'Trigger systemctl daemon-reload'
-    - 'Restart the k3s service'
-
-#
-# Service
-#
-
-- name: 'Make sure systemd is aware of all newly created files'
-  meta: flush_handlers
-
-- name: 'Start and enable the service'
-  service:
-    name: 'k3s.service'
-    state: 'started'
-    enabled: 'true'
+- name: 'Run service.yml'
+  include_tasks: 'service.yml'
 
 #
 # Scripts

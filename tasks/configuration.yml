@@ -1,0 +1,30 @@
+---
+# install_k3s/tasks/configuration.yml
+
+#
+# Configuration files
+#
+
+- name: 'Create directories'
+  file:
+    path: "{{ item }}"
+    state: 'directory'
+    owner: 'root'
+    group: 'root'
+    mode: '0755'
+  loop:
+    - '/etc/rancher/'
+    - '/etc/rancher/k3s/'
+  notify:
+    - 'Restart the k3s service'
+
+- name: 'Create the configuration file'
+  template:
+    src: 'config.yaml.j2'
+    dest: '/etc/rancher/k3s/config.yaml'
+    owner: 'root'
+    group: 'root'
+    mode: '0640'
+  notify:
+    - 'Trigger systemctl daemon-reload'
+    - 'Restart the k3s service'

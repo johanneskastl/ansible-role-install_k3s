@@ -1,0 +1,4 @@
+---
+# install_k3s/defaults/main.yml
+
+path_to_install_to: '/usr/local/bin'

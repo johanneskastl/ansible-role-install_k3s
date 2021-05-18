@@ -1,5 +1,6 @@
 ---
 # install_k3s/defaults/main.yml
 
+# directories
 path_to_install_to: '/usr/local/bin'
 systemd_directory_path: '/etc/systemd/system'

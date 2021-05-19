@@ -115,3 +115,6 @@ disable: "{{ disable_something }}"
 {% if disable_scheduler is defined %}
 disable-scheduler: 'true'
 {% endif %}
+{% if disable_cloud_controller is defined %}
+disable-cloud-controller: 'true'
+{% endif %}

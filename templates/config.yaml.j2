@@ -112,3 +112,6 @@ default-local-storage-path: "{{ default_local_storage_path }}"
 {% if disable_something is defined %}
 disable: "{{ disable_something }}"
 {% endif %}
+{% if disable_scheduler is defined %}
+disable-scheduler: 'true'
+{% endif %}

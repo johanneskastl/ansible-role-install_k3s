@@ -15,3 +15,6 @@
 
 - name: 'Run kubeconfig.yml'
   include_tasks: 'kubeconfig.yml'
+
+- name: 'Run token.yml'
+  include_tasks: 'token.yml'

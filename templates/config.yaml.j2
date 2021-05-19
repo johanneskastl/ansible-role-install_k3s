@@ -127,3 +127,6 @@ kubelet-arg: "{{ kubelet_arg }}"
 {% if kube_proxy_arg is defined %}
 kube-proxy-arg: "{{ kube_proxy_arg }}"
 {% endif %}
+{% if rootless is defined %}
+rootless: 'true'
+{% endif %}

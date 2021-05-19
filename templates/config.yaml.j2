@@ -94,3 +94,6 @@ cluster-domain: "{{ cluster_domain }}"
 {% if flannel_backend is defined %}
 flannel-backend: "{{ flannel_backend }}"
 {% endif %}
+{% if kube_apiserver_arg is defined %}
+kube-apiserver-arg: "{{ kube_apiserver_arg }}"
+{% endif %}

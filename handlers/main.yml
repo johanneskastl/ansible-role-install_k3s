@@ -7,5 +7,5 @@
 
 - name: 'Restart the k3s service'
   service:
-    name: 'k3s.service'
+    name: "{{ systemd_unit_name }}"
     state: 'restarted'

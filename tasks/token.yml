@@ -1,0 +1,12 @@
+---
+# install_k3s/tasks/token.yml
+
+#
+# token
+#
+- name: 'Fetch token to Ansible control node'
+  fetch:
+    src: "{{ data_dir | default('/var/lib/rancher/k3s') }}/server/node-token"
+    dest: 'k3s-token'
+    mode: '0600'
+    flat: 'yes'

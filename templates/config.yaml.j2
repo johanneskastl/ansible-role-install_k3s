@@ -97,3 +97,6 @@ flannel-backend: "{{ flannel_backend }}"
 {% if kube_apiserver_arg is defined %}
 kube-apiserver-arg: "{{ kube_apiserver_arg }}"
 {% endif %}
+{% if kube_scheduler_arg is defined %}
+kube-scheduler-arg: "{{ kube_scheduler_arg }}"
+{% endif %}

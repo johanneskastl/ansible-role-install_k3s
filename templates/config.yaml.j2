@@ -121,3 +121,6 @@ disable-cloud-controller: 'true'
 {% if disable_network_policy is defined %}
 disable-network-policy: 'true'
 {% endif %}
+{% if kubelet_arg is defined %}
+kubelet-arg: "{{ kubelet_arg }}"
+{% endif %}

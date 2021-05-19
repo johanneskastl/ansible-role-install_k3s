@@ -109,3 +109,6 @@ kube-cloud-controller-manager-arg: "{{ kube_cloud_controller_manager_arg }}"
 {% if default_local_storage_path is defined %}
 default-local-storage-path: "{{ default_local_storage_path }}"
 {% endif %}
+{% if disable_something is defined %}
+disable: "{{ disable_something }}"
+{% endif %}

@@ -100,3 +100,6 @@ kube-apiserver-arg: "{{ kube_apiserver_arg }}"
 {% if kube_scheduler_arg is defined %}
 kube-scheduler-arg: "{{ kube_scheduler_arg }}"
 {% endif %}
+{% if kube_controller_manager_arg is defined %}
+kube-controller-manager-arg: "{{ kube_controller_manager_arg }}"
+{% endif %}

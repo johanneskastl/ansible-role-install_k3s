@@ -139,3 +139,6 @@ agent-token-file: "{{ agent_token_file }}"
 {% if server_url is defined %}
 server: "{{ server_url }}"
 {% endif %}
+{% if secrets_encryption is defined %}
+secrets-encryption: 'true'
+{% endif %}

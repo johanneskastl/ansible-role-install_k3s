@@ -95,6 +95,9 @@ datastore-endpoint: "{{ datastore_endpoint }}"
 {% if datastore_cafile is defined %}
 datastore-cafile: "{{ datastore_cafile }}"
 {% endif %}
+{% if datastore_certfile is defined %}
+datastore-certfile: "{{ datastore_certfile }}"
+{% endif %}
 
 #
 # storage

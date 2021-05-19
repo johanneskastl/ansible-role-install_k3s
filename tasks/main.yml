@@ -7,11 +7,11 @@
 - name: 'Run configuration.yml'
   include_tasks: 'configuration.yml'
 
-- name: 'Run service.yml'
-  include_tasks: 'service.yml'
-
 - name: 'Run scripts.yml'
   include_tasks: 'scripts.yml'
+
+- name: 'Run service.yml'
+  include_tasks: 'service.yml'
 
 - name: 'Run kubeconfig.yml'
   include_tasks: 'kubeconfig.yml'

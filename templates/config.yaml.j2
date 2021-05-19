@@ -130,3 +130,6 @@ kube-proxy-arg: "{{ kube_proxy_arg }}"
 {% if rootless is defined %}
 rootless: 'true'
 {% endif %}
+{% if agent_token is defined %}
+agent-token: "{{ agent_token }}"
+{% endif %}

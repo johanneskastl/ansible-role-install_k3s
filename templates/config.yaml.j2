@@ -133,3 +133,6 @@ rootless: 'true'
 {% if agent_token is defined %}
 agent-token: "{{ agent_token }}"
 {% endif %}
+{% if agent_token_file is defined %}
+agent-token-file: "{{ agent_token_file }}"
+{% endif %}

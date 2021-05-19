@@ -11,7 +11,7 @@ WantedBy=multi-user.target
 Type=notify
 EnvironmentFile=-/etc/default/%N
 EnvironmentFile=-/etc/sysconfig/%N
-EnvironmentFile=-{{ systemd_directory_path }}/k3s.service.env
+EnvironmentFile=-{{ systemd_directory_path }}/{{ systemd_unit_name }}.env
 KillMode=process
 Delegate=yes
 # Having non-zero Limit*s causes performance problems due to accounting overhead
@@ -26,5 +26,5 @@ RestartSec=5s
 ExecStartPre=-/sbin/modprobe br_netfilter
 ExecStartPre=-/sbin/modprobe overlay
 ExecStart={{ path_to_install_to }}/k3s \
-    {{ k3s_node_type }} \
+    server \
 

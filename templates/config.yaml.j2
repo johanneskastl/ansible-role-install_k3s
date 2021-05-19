@@ -92,6 +92,9 @@ kube-cloud-controller-manager-arg: "{{ kube_cloud_controller_manager_arg }}"
 {% if datastore_endpoint is defined %}
 datastore-endpoint: "{{ datastore_endpoint }}"
 {% endif %}
+{% if datastore_cafile is defined %}
+datastore-cafile: "{{ datastore_cafile }}"
+{% endif %}
 
 #
 # storage

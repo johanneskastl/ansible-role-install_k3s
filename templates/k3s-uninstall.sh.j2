@@ -10,19 +10,19 @@ set -x
 /usr/local/bin/k3s-killall.sh
 
 if command -v systemctl; then
-    systemctl disable k3s
-    systemctl reset-failed k3s
+    systemctl disable {{ systemd_unit_name }}
+    systemctl reset-failed {{ systemd_unit_name }}
     systemctl daemon-reload
 fi
 if command -v rc-update; then
     rc-update delete k3s default
 fi
 
-rm -f /etc/systemd/system/k3s.service
-rm -f /etc/systemd/system/k3s.service.env
+rm -f /etc/systemd/system/{{ systemd_unit_name }}
+rm -f /etc/systemd/system/{{ systemd_unit_name }}.env
 
 remove_uninstall() {
-    rm -f /usr/local/bin/k3s-uninstall.sh
+    rm -f /usr/local/bin/{{ uninstall_script_name }}
 }
 trap remove_uninstall EXIT
 

@@ -6,6 +6,11 @@
     systemd_unit_name: 'k3s-agent.service'
   when: 'k3s_node_type == "agent"'
 
+- name: 'Set uninstall script name on agents'
+  set_fact:
+    uninstall_script_name: 'k3s-agent-uninstall.sh'
+  when: 'k3s_node_type == "agent"'
+
 - name: 'Run binary.yml'
   include_tasks: 'binary.yml'
 

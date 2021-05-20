@@ -5,23 +5,13 @@
 # Scripts
 #
 
-- name: 'Create the uninstall script on the server'
+- name: 'Create the uninstall script'
   template:
     src: 'k3s-uninstall.sh.j2'
-    dest: '{{ path_to_install_to }}/k3s-uninstall.sh'
+    dest: '{{ path_to_install_to }}/{{ uninstall_script_name }}'
     owner: 'root'
     group: 'root'
     mode: '0755'
-  when: 'k3s_node_type == "server"'
-
-- name: 'Create the uninstall script on the agent'
-  template:
-    src: 'k3s-uninstall.sh.j2'
-    dest: '{{ path_to_install_to }}/k3s-agent-uninstall.sh'
-    owner: 'root'
-    group: 'root'
-    mode: '0755'
-  when: 'k3s_node_type == "agent"'
 
 - name: 'Create the killall script'
   template:

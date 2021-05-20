@@ -1,6 +1,9 @@
 ---
 # install_k3s/defaults/main.yml
 
+# role logic
+fetch_token: 'false'
+
 # default for type of node
 k3s_node_type: 'server'
 systemd_unit_name: 'k3s.service'

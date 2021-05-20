@@ -29,4 +29,6 @@
 
 - name: 'Run token.yml'
   include_tasks: 'token.yml'
-  when: 'k3s_node_type == "server"'
+  when:
+    - 'k3s_node_type == "server"'
+    - 'fetch_token | bool'

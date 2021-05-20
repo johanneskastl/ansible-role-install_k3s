@@ -4,6 +4,7 @@
 # default for type of node
 k3s_node_type: 'server'
 systemd_unit_name: 'k3s.service'
+uninstall_script_name: 'k3s-uninstall.sh'
 
 # ignore errors
 ignore_errors_when_binary_downloaded: 'false'

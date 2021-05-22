@@ -1,6 +1,10 @@
 ---
 # install_k3s/tasks/set_facts.yml
 
+#
+# different settings on agents
+#
+
 - name: 'Set systemd unit name on agents'
   set_fact:
     systemd_unit_name: 'k3s-agent.service'

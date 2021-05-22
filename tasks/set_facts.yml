@@ -15,3 +15,16 @@
     uninstall_script_name: 'k3s-agent-uninstall.sh'
   when: 'k3s_node_type == "agent"'
 
+#
+# settings depending on CPU architecture
+#
+
+- name: 'Set name of binary to download'
+  set_fact:
+    k3s_binary_download_name: 'k3s-arm64'
+  when: 'ansible_architecture == "aarch64"'
+
+- name: 'Set name of sha256sum file to download'
+  set_fact:
+    k3s_sha256sum_download_name: 'sha256sum-arm64.txt'
+  when: 'ansible_architecture == "aarch64"'

@@ -11,7 +11,59 @@ None.
 Role Variables
 --------------
 
-None.
+Many. Basically most options that can be handed over to k3s when installing via the script being curled and piped to bash, can be set as variables that will be put into the `config.yaml` file.
+
+The only special one is `disable_something` (the CLI option is called `disable`, but that makes a horrible variable name).
+
+
+- `disable_something`
+- `bind_address`
+- `https_listen_port`
+- `advertise_address`
+- `advertise_port`
+- `tls_san`
+- `data_dir`
+- `cluster_cidr`
+- `service_cidr`
+- `cluster_dns`
+- `cluster_domain`
+- `flannel_backend`
+- `token`
+- `token_file`
+- `write_kubeconfig`
+- `write_kubeconfig_mode`
+- `kube_apiserver_arg`
+- `kube_scheduler_arg`
+- `kube_controller_manager_arg`
+- `kube_cloud_controller_manager_arg`
+- `datastore_endpoint`
+- `datastore_cafile`
+- `datastore_certfile`
+- `datastore_keyfile`
+- `default_local_storage_path`
+- `disable_scheduler` (true/false)
+- `disable_cloud_controller` (true/false)
+- `disable_network_policy` (true/false)
+- `node_name`
+- `with_node_id` (true/false)
+- `node_label`
+- `node_taint`
+- `docker` (true/false)
+- `container_runtime_endpoint`
+- `pause_image`
+- `private_registry`
+- `node_ip`
+- `node_external_ip`
+- `resolv_conf`
+- `flannel_iface`
+- `flannel_conf`
+- `kubelet_arg`
+- `kube_proxy_arg`
+- `rootless` (true/false)
+- `agent_token`
+- `agent_token_file`
+- `server_url`
+- `secrets_encryption` (true/false)
 
 Dependencies
 ------------

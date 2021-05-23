@@ -115,13 +115,13 @@ default-local-storage-path: "{{ default_local_storage_path }}"
 {% if disable_something is defined %}
 disable: "{{ disable_something }}"
 {% endif %}
-{% if disable_scheduler is defined %}
+{% if disable_scheduler is defined and disable_scheduler | bool %}
 disable-scheduler: 'true'
 {% endif %}
-{% if disable_cloud_controller is defined %}
+{% if disable_cloud_controller is defined and disable_cloud_controller | bool %}
 disable-cloud-controller: 'true'
 {% endif %}
-{% if disable_network_policy is defined %}
+{% if disable_network_policy is defined and disable_network_policy | bool %}
 disable-network-policy: 'true'
 {% endif %}
 
@@ -131,7 +131,7 @@ disable-network-policy: 'true'
 {% if node_name is defined %}
 node-name: "{{ node_name }}"
 {% endif %}
-{% if with_node_id is defined %}
+{% if with_node_id is defined and with_node_id | bool %}
 with-node-id: "true"
 {% endif %}
 {% if node_label is defined %}
@@ -150,7 +150,7 @@ node-taint:
 #
 # agent/runtime
 #
-{% if docker is defined %}
+{% if docker is defined and docker | bool %}
 docker: "true"
 {% endif %}
 {% if container_runtime_endpoint is defined %}
@@ -195,7 +195,7 @@ kube-proxy-arg: "{{ kube_proxy_arg }}"
 #
 # experimental
 #
-{% if rootless is defined %}
+{% if rootless is defined and rootless | bool %}
 rootless: 'true'
 {% endif %}
 
@@ -211,6 +211,6 @@ agent-token-file: "{{ agent_token_file }}"
 {% if server_url is defined %}
 server: "{{ server_url }}"
 {% endif %}
-{% if secrets_encryption is defined %}
+{% if secrets_encryption is defined and secrets_encryption | bool %}
 secrets-encryption: 'true'
 {% endif %}

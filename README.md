@@ -11,11 +11,12 @@ None.
 Role Variables
 --------------
 
-Many. Basically most options that can be handed over to k3s when installing via the script being curled and piped to bash, can be set as variables that will be put into the `config.yaml` file.
+Many.
 
+Basically most options that can be handed over to k3s when installing via the script being curled and piped to bash, can be set as variables that will be put into the `config.yaml` file.
 The only special one is `disable_something` (the CLI option is called `disable`, but that makes a horrible variable name).
 
-
+*Variables translated to config.yaml settings*
 - `disable_something`
 - `bind_address`
 - `https_listen_port`
@@ -64,6 +65,16 @@ The only special one is `disable_something` (the CLI option is called `disable`,
 - `agent_token_file`
 - `server_url`
 - `secrets_encryption` (true/false)
+
+If you want to have a specific version of k3s installed, settings `k3s_version` will do that 8see the example playbook below).
+
+In case you want to override the default locations, these two variables can be set:
+- `path_to_install_to`: defaults to `/usr/local/bin`
+- `systemd_directory_path`: defaults to `/etc/systemd/system`
+
+If you know why you would want that, feel free to use a different URL or channel. Here are the defaults:
+- `k3s_installation_url`: defaults to `https://update.k3s.io/v1-release/channels`
+- `k3s_installation_channel`: defaults to `stable`
 
 Dependencies
 ------------

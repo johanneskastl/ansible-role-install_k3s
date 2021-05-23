@@ -92,6 +92,15 @@ Use a playbook like the following to deploy onto a single node:
     - role: 'johanneskastl.install_k3s'
 ```
 
+If you want to have a different k3s version, use something like this:
+```
+- hosts: some_hostname
+  roles:
+    - role: 'johanneskastl.install_k3s'
+      vars:
+        k3s_version: 'v1.19.10+k3s1'
+```
+
 Depending on your host, you might want to set the tls_san variable to contain any external IPs or hostnames or similar.
 
 In case you want to setup k3s with one controlplane node and multiple workers, use the following playbooks:

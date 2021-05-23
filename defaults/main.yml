@@ -3,6 +3,7 @@
 
 # role logic
 fetch_token: 'false'
+
 # default name used on amd64 architecture
 k3s_binary_download_name: 'k3s'
 k3s_sha256sum_download_name: 'sha256sum-amd64.txt'

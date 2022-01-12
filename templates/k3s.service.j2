@@ -28,4 +28,7 @@ ExecStartPre=-/sbin/modprobe br_netfilter
 ExecStartPre=-/sbin/modprobe overlay
 ExecStart={{ path_to_install_to }}/k3s \
     server \
+{% if kubelet_arg is defined %}
+       '--kubelet-arg={{ kubelet_arg }}' \
+{% endif %}
 

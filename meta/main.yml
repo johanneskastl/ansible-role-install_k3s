@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: 'install_k3s'
+  namespace: 'johanneskastl'
   author: 'Johannes Kastl'
   description: 'Install k3s (without downloading and executing shell code with root permissions)'
   company: 'B1 Systems GmbH'

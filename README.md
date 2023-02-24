@@ -115,8 +115,7 @@ In case you want to setup k3s with one controlplane node and multiple workers, u
 
   roles:
     - role: 'johanneskastl.install_k3s'
-      vars:
-        fetch_token: 'true'
+      fetch_token: 'true'
 ```
 
 ```
@@ -147,10 +146,9 @@ In case you want to setup k3s with one controlplane node and multiple workers, u
 
   roles:
     - role: 'install_k3s'
-      vars:
-        k3s_node_type: 'agent'
-        server_url: "https://{{ hostvars[groups['k3sservers'][0]]['ansible_default_ipv4']['address'] }}:6443"
-        token_file: '/etc/rancher/k3s/token_to_register'`
+      k3s_node_type: 'agent'
+      server_url: "https://{{ hostvars[groups['k3sservers'][0]]['ansible_default_ipv4']['address'] }}:6443"
+      token_file: '/etc/rancher/k3s/token_to_register'`
 ```
 
 The second playbook sets the type to `agent`, the server_url to the IP address of the master node and hands over the path to the token file.

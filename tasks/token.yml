@@ -5,7 +5,7 @@
 # token
 #
 - name: 'Fetch token to Ansible control node'
-  fetch:
+  ansible.builtin.fetch:
     src: "{{ data_dir | default('/var/lib/rancher/k3s') }}/server/node-token"
     dest: 'k3s-token'
     mode: '0600'

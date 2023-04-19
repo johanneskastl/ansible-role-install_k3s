@@ -49,4 +49,4 @@
   ansible.builtin.service:
     name: "{{ systemd_unit_name }}"
     state: 'started'
-    enabled: 'true'
+    enabled: true

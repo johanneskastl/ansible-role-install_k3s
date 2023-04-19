@@ -2,26 +2,26 @@
 # install_k3s/tasks/main.yml
 
 - name: 'Run set_facts.yml'
-  include_tasks: 'set_facts.yml'
+  ansible.builtin.include_tasks: 'set_facts.yml'
 
 - name: 'Run binary.yml'
-  include_tasks: 'binary.yml'
+  ansible.builtin.include_tasks: 'binary.yml'
 
 - name: 'Run configuration.yml'
-  include_tasks: 'configuration.yml'
+  ansible.builtin.include_tasks: 'configuration.yml'
 
 - name: 'Run scripts.yml'
-  include_tasks: 'scripts.yml'
+  ansible.builtin.include_tasks: 'scripts.yml'
 
 - name: 'Run service.yml'
-  include_tasks: 'service.yml'
+  ansible.builtin.include_tasks: 'service.yml'
 
 - name: 'Run kubeconfig.yml'
-  include_tasks: 'kubeconfig.yml'
+  ansible.builtin.include_tasks: 'kubeconfig.yml'
   when: 'k3s_node_type == "server"'
 
 - name: 'Run token.yml'
-  include_tasks: 'token.yml'
+  ansible.builtin.include_tasks: 'token.yml'
   when:
     - 'k3s_node_type == "server"'
     - 'fetch_token | bool'

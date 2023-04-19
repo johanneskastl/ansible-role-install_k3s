@@ -6,6 +6,6 @@
     daemon_reload: 'yes'
 
 - name: 'Restart the k3s service'
-  service:
+  ansible.builtin.service:
     name: "{{ systemd_unit_name }}"
     state: 'restarted'

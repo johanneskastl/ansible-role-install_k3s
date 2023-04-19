@@ -19,7 +19,8 @@
   when:
     - 'k3s_version is undefined'
 
-- ansible.builtin.set_fact:
+- name: 'Set fact for k3s_version, if unset'
+  ansible.builtin.set_fact:
     k3s_version: "{{ get_k3s_version.url | basename }}"
   when:
     - 'k3s_version is undefined'

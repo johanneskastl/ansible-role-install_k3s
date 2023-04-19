@@ -12,9 +12,9 @@
   ansible.builtin.uri:
     url: "{{ k3s_installation_url }}/{{ k3s_installation_channel }}"
   delegate_to: 'localhost'
-  become: 'false'
-  changed_when: 'false'
-  check_mode: 'false'
+  become: false
+  changed_when: false
+  check_mode: false
   register: get_k3s_version
   when:
     - 'k3s_version is undefined'

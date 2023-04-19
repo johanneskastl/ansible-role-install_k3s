@@ -6,7 +6,7 @@
 #
 
 - name: 'Create directories'
-  file:
+  ansible.builtin.file:
     path: "{{ item }}"
     state: 'directory'
     owner: 'root'
@@ -19,7 +19,7 @@
     - 'Restart the k3s service'
 
 - name: 'Create the configuration file'
-  template:
+  ansible.builtin.template:
     src: 'config.yaml.j2'
     dest: '/etc/rancher/k3s/config.yaml'
     owner: 'root'

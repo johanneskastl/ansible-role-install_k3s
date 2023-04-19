@@ -39,7 +39,7 @@
 
 - name: 'Set fact to ignore errors in check mode, if binary would be downloaded'
   ansible.builtin.set_fact:
-    ignore_errors_when_binary_downloaded: 'true'
+    ignore_errors_when_binary_downloaded: true
   changed_when: false
   when:
     - 'download_binary.changed | bool'

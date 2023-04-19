@@ -6,7 +6,7 @@
 #
 
 - name: 'Create the uninstall script'
-  template:
+  ansible.builtin.template:
     src: 'k3s-uninstall.sh.j2'
     dest: '{{ path_to_install_to }}/{{ uninstall_script_name }}'
     owner: 'root'
@@ -14,7 +14,7 @@
     mode: '0755'
 
 - name: 'Create the killall script'
-  template:
+  ansible.builtin.template:
     src: 'k3s-killall.sh.j2'
     dest: '{{ path_to_install_to }}/k3s-killall.sh'
     owner: 'root'

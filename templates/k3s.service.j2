@@ -29,6 +29,8 @@ ExecStartPre=-/sbin/modprobe overlay
 ExecStart={{ path_to_install_to }}/k3s \
     server \
 {% if kubelet_arg is defined %}
-       '--kubelet-arg={{ kubelet_arg }}' \
+{% for line in kubelet_arg %}
+       '--kubelet-arg={{ line }}' \
+{% endfor %}
 {% endif %}
 

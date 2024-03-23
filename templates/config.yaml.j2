@@ -74,6 +74,9 @@ token: "{{ token }}"
 {% if token_file is defined %}
 token-file: "{{ token_file }}"
 {% endif %}
+{% if server_url is defined %}
+server: "{{ server_url }}"
+{% endif %}
 {% if cluster_init is defined and cluster_init | bool %}
 cluster-init: 'true'
 {% endif %}
@@ -258,7 +261,4 @@ agent-token: "{{ agent_token }}"
 {% endif %}
 {% if agent_token_file is defined %}
 agent-token-file: "{{ agent_token_file }}"
-{% endif %}
-{% if server_url is defined %}
-server: "{{ server_url }}"
 {% endif %}

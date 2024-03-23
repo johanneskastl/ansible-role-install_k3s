@@ -194,6 +194,9 @@ image-credential-provider-config: "{{ image_credential_provider_config }}"
 {% if protect_kernel_defaults is defined and protect_kernel_defaults | bool %}
 protect-kernel-defaults: "true"
 {% endif %}
+{% if selinux is defined and selinux | bool %}
+selinux: "true"
+{% endif %}
 
 #
 # agent/runtime

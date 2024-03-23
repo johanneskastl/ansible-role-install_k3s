@@ -71,6 +71,7 @@ The only special one is `disable_something` (the CLI option is called `disable`,
 - `resolv_conf`
 - `flannel_iface`
 - `flannel_conf`
+- `flannel_cni_conf`
 - `kubelet_arg`
 - `kube_proxy_arg`
 - `rootless` (true/false)

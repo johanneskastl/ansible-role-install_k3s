@@ -84,10 +84,10 @@ agent-token-file: "{{ agent_token_file }}"
 server: "{{ server_url }}"
 {% endif %}
 {% if cluster_init is defined and cluster_init | bool %}
-cluster-init: 'true'
+cluster-init: true
 {% endif %}
 {% if secrets_encryption is defined and secrets_encryption | bool %}
-secrets-encryption: 'true'
+secrets-encryption: true
 {% endif %}
 
 #
@@ -149,19 +149,19 @@ default-local-storage-path: "{{ default_local_storage_path }}"
 disable: "{{ disable_something }}"
 {% endif %}
 {% if disable_scheduler is defined and disable_scheduler | bool %}
-disable-scheduler: 'true'
+disable-scheduler: true
 {% endif %}
 {% if disable_cloud_controller is defined and disable_cloud_controller | bool %}
-disable-cloud-controller: 'true'
+disable-cloud-controller: true
 {% endif %}
 {% if disable_kube_proxy is defined and disable_kube_proxy | bool %}
-disable-kube-proxy: 'true'
+disable-kube-proxy: true
 {% endif %}
 {% if disable_network_policy is defined and disable_network_policy | bool %}
-disable-network-policy: 'true'
+disable-network-policy: true
 {% endif %}
 {% if disable_helm_controller is defined and disable_helm_controller | bool %}
-disable-helm-controller: 'true'
+disable-helm-controller: true
 {% endif %}
 
 #
@@ -171,7 +171,7 @@ disable-helm-controller: 'true'
 node-name: "{{ node_name }}"
 {% endif %}
 {% if with_node_id is defined and with_node_id | bool %}
-with-node-id: "true"
+with-node-id: true
 {% endif %}
 {% if node_label is defined %}
 node-label:
@@ -192,10 +192,10 @@ image-credential-provider-bin-dir: "{{ image_credential_provider_bin_dir }}"
 image-credential-provider-config: "{{ image_credential_provider_config }}"
 {% endif %}
 {% if protect_kernel_defaults is defined and protect_kernel_defaults | bool %}
-protect-kernel-defaults: "true"
+protect-kernel-defaults: true
 {% endif %}
 {% if selinux is defined and selinux | bool %}
-selinux: "true"
+selinux: true
 {% endif %}
 {% if lb_server_port is defined %}
 lb-server-port: {{ lb_server_port }}
@@ -205,7 +205,7 @@ lb-server-port: {{ lb_server_port }}
 # agent/runtime
 #
 {% if docker is defined and docker | bool %}
-docker: "true"
+docker: true
 {% endif %}
 {% if container_runtime_endpoint is defined %}
 container-runtime-endpoint: "{{ container_runtime_endpoint }}"
@@ -262,11 +262,11 @@ kube-proxy-arg: "{{ kube_proxy_arg }}"
 # experimental
 #
 {% if rootless is defined and rootless | bool %}
-rootless: 'true'
+rootless: true
 {% endif %}
 {% if enable_pprof is defined and enable_pprof | bool %}
-enable-pprof: 'true'
+enable-pprof: true
 {% endif %}
 {% if prefer_bundled_bin is defined and prefer_bundled_bin | bool %}
-prefer-bundled-bin: 'true'
+prefer-bundled-bin: true
 {% endif %}

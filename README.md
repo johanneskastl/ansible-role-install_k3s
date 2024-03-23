@@ -66,6 +66,7 @@ The only special one is `disable_something` (the CLI option is called `disable`,
 - `image_credential_provider_bin_dir`
 - `image_credential_provider_config`
 - `protect_kernel_defaults`
+- `selinux`
 - `docker` (true/false)
 - `container_runtime_endpoint`
 - `pause_image`

@@ -192,6 +192,9 @@ pause-image: "{{ pause_image }}"
 {% if private_registry is defined %}
 private-registry: "{{ private_registry }}"
 {% endif %}
+{% if system_default_registry is defined %}
+system-default-registry: "{{ system_default_registry }}"
+{% endif %}
 
 #
 # agent/networking

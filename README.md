@@ -28,6 +28,7 @@ The only special one is `disable_something` (the CLI option is called `disable`,
 - `data_dir`
 - `cluster_cidr`
 - `service_cidr`
+- `service_node_port_range`
 - `cluster_dns`
 - `cluster_domain`
 - `flannel_backend`

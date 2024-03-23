@@ -58,6 +58,9 @@ flannel-ipv6-masq: true
 {% if flannel_external_ip is defined and flannel_external_ip | bool %}
 flannel-external-ip: true
 {% endif %}
+{% if egress_selector_mode is defined %}
+egress-selector-mode: "{{ egress_selector_mode }}"
+{% endif %}
 
 #
 # cluster

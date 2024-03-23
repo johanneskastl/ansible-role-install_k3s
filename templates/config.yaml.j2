@@ -170,6 +170,9 @@ node-taint:
   - "{{ line }}"
 {% endfor %}
 {% endif %}
+{% if image_credential_provider_bin_dir is defined %}
+image-credential-provider-bin-dir: "{{ image_credential_provider_bin_dir }}"
+{% endif %}
 
 #
 # agent/runtime

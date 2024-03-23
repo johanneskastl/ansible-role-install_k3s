@@ -61,6 +61,9 @@ flannel-external-ip: true
 {% if egress_selector_mode is defined %}
 egress-selector-mode: "{{ egress_selector_mode }}"
 {% endif %}
+{% if servicelb_namespace is defined %}
+servicelb-namespace: "{{ servicelb_namespace }}"
+{% endif %}
 
 #
 # cluster

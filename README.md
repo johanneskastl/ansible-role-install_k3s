@@ -64,6 +64,7 @@ The only special one is `disable_something` (the CLI option is called `disable`,
 - `docker` (true/false)
 - `container_runtime_endpoint`
 - `pause_image`
+- `snapshotter`
 - `private_registry`
 - `systemd_default_registry`
 - `node_ip`

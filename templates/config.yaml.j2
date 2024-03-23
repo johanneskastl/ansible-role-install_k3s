@@ -121,6 +121,9 @@ disable-scheduler: 'true'
 {% if disable_cloud_controller is defined and disable_cloud_controller | bool %}
 disable-cloud-controller: 'true'
 {% endif %}
+{% if disable_kube_proxy is defined and disable_kube_proxy | bool %}
+disable-kube-proxy: 'true'
+{% endif %}
 {% if disable_network_policy is defined and disable_network_policy | bool %}
 disable-network-policy: 'true'
 {% endif %}

@@ -32,6 +32,7 @@ The only special one is `disable_something` (the CLI option is called `disable`,
 - `cluster_dns`
 - `cluster_domain`
 - `flannel_backend`
+- `flannel_ipv6_masq` (true/false)
 - `token`
 - `token_file`
 - `write_kubeconfig`

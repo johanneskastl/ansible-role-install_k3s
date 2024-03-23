@@ -65,6 +65,7 @@ The only special one is `disable_something` (the CLI option is called `disable`,
 - `container_runtime_endpoint`
 - `pause_image`
 - `private_registry`
+- `systemd_default_registry`
 - `node_ip`
 - `node_external_ip`
 - `resolv_conf`

@@ -91,6 +91,9 @@ write-kubeconfig-mode: "{{ write_kubeconfig_mode }}"
 {% if kube_apiserver_arg is defined %}
 kube-apiserver-arg: "{{ kube_apiserver_arg }}"
 {% endif %}
+{% if etcd_arg is defined %}
+etcd-arg: "{{ etcd_arg }}"
+{% endif %}
 {% if kube_scheduler_arg is defined %}
 kube-scheduler-arg: "{{ kube_scheduler_arg }}"
 {% endif %}

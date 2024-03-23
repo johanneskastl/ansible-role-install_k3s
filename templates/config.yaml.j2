@@ -77,6 +77,9 @@ token-file: "{{ token_file }}"
 {% if cluster_init is defined and cluster_init | bool %}
 cluster-init: 'true'
 {% endif %}
+{% if secrets_encryption is defined and secrets_encryption | bool %}
+secrets-encryption: 'true'
+{% endif %}
 
 #
 # client
@@ -258,7 +261,4 @@ agent-token-file: "{{ agent_token_file }}"
 {% endif %}
 {% if server_url is defined %}
 server: "{{ server_url }}"
-{% endif %}
-{% if secrets_encryption is defined and secrets_encryption | bool %}
-secrets-encryption: 'true'
 {% endif %}

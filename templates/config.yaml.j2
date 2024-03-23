@@ -52,6 +52,9 @@ cluster-domain: "{{ cluster_domain }}"
 {% if flannel_backend is defined %}
 flannel-backend: "{{ flannel_backend }}"
 {% endif %}
+{% if flannel_ipv6_masq is defined and flannel_ipv6_masq | bool %}
+flannel-ipv6-masq: true
+{% endif %}
 
 #
 # cluster

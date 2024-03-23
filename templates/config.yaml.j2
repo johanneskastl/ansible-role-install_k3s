@@ -261,3 +261,6 @@ rootless: 'true'
 {% if enable_pprof is defined and enable_pprof | bool %}
 enable-pprof: 'true'
 {% endif %}
+{% if prefer_bundled_bin is defined and prefer_bundled_bin | bool %}
+prefer-bundled-bin: 'true'
+{% endif %}

@@ -46,6 +46,7 @@ The only special one is `disable_something` (the CLI option is called `disable`,
 - `default_local_storage_path`
 - `disable_scheduler` (true/false)
 - `disable_cloud_controller` (true/false)
+- `disable_kube_proxy` (true/false)
 - `disable_network_policy` (true/false)
 - `node_name`
 - `with_node_id` (true/false)

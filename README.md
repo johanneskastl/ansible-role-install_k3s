@@ -81,6 +81,7 @@ The only special one is `disable_something` (the CLI option is called `disable`,
 - `kubelet_arg`
 - `kube_proxy_arg`
 - `rootless` (true/false)
+- `enable_pprof` (true/false)
 
 If you want to have a specific version of k3s installed, settings `k3s_version` will do that 8see the example playbook below).
 

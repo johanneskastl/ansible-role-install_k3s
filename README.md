@@ -34,6 +34,7 @@ The only special one is `disable_something` (the CLI option is called `disable`,
 - `flannel_backend`
 - `flannel_ipv6_masq` (true/false)
 - `flannel_external_ip` (true/false)
+- `egress_selector_mode`
 - `token`
 - `token_file`
 - `write_kubeconfig`

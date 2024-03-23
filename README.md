@@ -41,6 +41,7 @@ The only special one is `disable_something` (the CLI option is called `disable`,
 - `write_kubeconfig`
 - `write_kubeconfig_mode`
 - `kube_apiserver_arg`
+- `etcd_arg`
 - `kube_scheduler_arg`
 - `kube_controller_manager_arg`
 - `kube_cloud_controller_manager_arg`

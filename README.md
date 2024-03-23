@@ -59,6 +59,7 @@ The only special one is `disable_something` (the CLI option is called `disable`,
 - `with_node_id` (true/false)
 - `node_label`
 - `node_taint`
+- `image_credential_provider_bin_dir`
 - `docker` (true/false)
 - `container_runtime_endpoint`
 - `pause_image`

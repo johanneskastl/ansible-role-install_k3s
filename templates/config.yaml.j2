@@ -258,3 +258,6 @@ kube-proxy-arg: "{{ kube_proxy_arg }}"
 {% if rootless is defined and rootless | bool %}
 rootless: 'true'
 {% endif %}
+{% if enable_pprof is defined and enable_pprof | bool %}
+enable-pprof: 'true'
+{% endif %}

@@ -55,6 +55,9 @@ flannel-backend: "{{ flannel_backend }}"
 {% if flannel_ipv6_masq is defined and flannel_ipv6_masq | bool %}
 flannel-ipv6-masq: true
 {% endif %}
+{% if flannel_external_ip is defined and flannel_external_ip | bool %}
+flannel-external-ip: true
+{% endif %}
 
 #
 # cluster

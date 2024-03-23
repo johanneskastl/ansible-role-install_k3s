@@ -197,6 +197,9 @@ protect-kernel-defaults: "true"
 {% if selinux is defined and selinux | bool %}
 selinux: "true"
 {% endif %}
+{% if lb_server_port is defined %}
+lb-server-port: {{ lb_server_port }}
+{% endif %}
 
 #
 # agent/runtime

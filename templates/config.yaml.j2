@@ -40,6 +40,9 @@ cluster-cidr: "{{ cluster_cidr }}"
 {% if service_cidr is defined %}
 service-cidr: "{{ service_cidr }}"
 {% endif %}
+{% if service_node_port_range is defined %}
+service-node-port-range: "{{ service_node_port_range }}"
+{% endif %}
 {% if cluster_dns is defined %}
 cluster-dns: "{{ cluster_dns }}"
 {% endif %}
